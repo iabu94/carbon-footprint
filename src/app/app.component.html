@@ -1,0 +1,80 @@
+<div class="text-center m-4 p-4">
+  <h1>Carbon Footprint Calculator</h1>
+</div>
+
+<div class="m-auto max-w-[720px]">
+  <mat-vertical-stepper [linear]="false" #stepper>
+    <!-- Welcome -->
+    <mat-step>
+      <ng-template matStepLabel><strong>Welcome</strong></ng-template>
+      <div class="pb-4">
+        <app-welcome />
+      </div>
+      <button mat-raised-button color="primary" matStepperNext>Next</button>
+    </mat-step>
+    <!-- House -->
+    <mat-step>
+      <ng-template matStepLabel>House</ng-template>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <!-- Flights -->
+    <mat-step>
+      <ng-template matStepLabel>Flights</ng-template>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <!-- Car -->
+    <mat-step>
+      <ng-template matStepLabel>Car</ng-template>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <!-- Motorbike -->
+    <mat-step>
+      <ng-template matStepLabel>Motorbike</ng-template>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <!-- Bus & Rail -->
+    <mat-step>
+      <ng-template matStepLabel>Bus & Rail</ng-template>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <!-- Secondary -->
+    <mat-step>
+      <ng-template matStepLabel>Secondary</ng-template>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <!-- Results -->
+    <mat-step>
+      <ng-template matStepLabel>Results</ng-template>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+</div>
