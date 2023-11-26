@@ -8,13 +8,20 @@
     <mat-step>
       <ng-template matStepLabel><strong>Welcome</strong></ng-template>
       <div class="pb-4">
-        <app-welcome />
+        @defer (on viewport) {
+          <app-welcome />
+        } @placeholder {
+          <p>Loading...</p>
+        }
       </div>
       <button mat-raised-button color="primary" matStepperNext>Next</button>
     </mat-step>
     <!-- House -->
     <mat-step>
       <ng-template matStepLabel>House</ng-template>
+      <div class="pb-4">
+        <app-house />
+      </div>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -23,6 +30,9 @@
     <!-- Flights -->
     <mat-step>
       <ng-template matStepLabel>Flights</ng-template>
+      <div class="pb-4">
+        <app-flights />
+      </div>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -31,6 +41,9 @@
     <!-- Car -->
     <mat-step>
       <ng-template matStepLabel>Car</ng-template>
+      <div class="pb-4">
+        <app-car />
+      </div>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -39,6 +52,9 @@
     <!-- Motorbike -->
     <mat-step>
       <ng-template matStepLabel>Motorbike</ng-template>
+      <div class="pb-4">
+        <app-motorbike />
+      </div>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -47,6 +63,9 @@
     <!-- Bus & Rail -->
     <mat-step>
       <ng-template matStepLabel>Bus & Rail</ng-template>
+      <div class="pb-4">
+        <app-busrail />
+      </div>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -55,6 +74,7 @@
     <!-- Secondary -->
     <mat-step>
       <ng-template matStepLabel>Secondary</ng-template>
+      <app-secondary />
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -63,17 +83,16 @@
     <!-- Results -->
     <mat-step>
       <ng-template matStepLabel>Results</ng-template>
+      @defer (on viewport) {
+        <app-results />
+      } @placeholder {
+        <p>Loading...</p>
+      }
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
-      </div>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      You are now done.
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-raised-button color="primary">Summarize</button>
+        <div class="">
+          {{ result | json }}
+        </div>
       </div>
     </mat-step>
   </mat-vertical-stepper>
